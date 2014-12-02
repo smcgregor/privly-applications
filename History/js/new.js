@@ -131,6 +131,12 @@ var callbacks = {
     for(var i = 0; i < response.json.length; i++) {
 
       var app = response.json[i].privly_application;
+
+      // Deprecated
+      if ( app === "ZeroBin" ) {
+        app = "Message";
+      }
+
       var href = response.json[i].privly_URL;
 
       // Assumes web and checks for other platforms
