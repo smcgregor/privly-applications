@@ -5,7 +5,7 @@
  **/
 describe ("Local Storage Test Suite", function() {
   
- it("can assign to locaStorage and get the item back", function() {
+ it("can assign to localStorage and get the item back", function() {
    ls.setItem("hello", "world");
    expect(ls.getItem("hello")).toBe("world");
    ls.removeItem("hello");
@@ -26,9 +26,9 @@ describe ("Local Storage Test Suite", function() {
     expect(ls.getItem("hello")).toBe("world");
     ls.removeItem("hello");
     expect(ls.getItem("hello")).not.toBeDefined();
-  });
+ });
 
-  it("can set and get Objects", function() {
+ it("can set and get Objects", function() {
     var obj = {"foo": "bar", "bar": "bazz"};
     ls.setItem("key", obj);
     var returned = ls.getItem("key");
@@ -36,6 +36,16 @@ describe ("Local Storage Test Suite", function() {
     expect(returned["foo"]).toBe("bar");
     expect(returned["bar"]).toBe("bazz");
     expect(returned).toEqual(obj);
-  });
+ });
 
+ it("can set and remove keys from Objects", function() {
+    var obj = {"foo": "bar", "bar": "bazz"};
+    ls.setItem("key", obj);
+    var returned = ls.getItem("key");
+    expect(ls.getItem("key")).toEqual(obj);
+    expect(returned["foo"]).toBe("bar");
+    ls.removeItem("foo");
+    expect(ls.getItem("foo")).not.toBeDefined();
+ });
+ 
 });
