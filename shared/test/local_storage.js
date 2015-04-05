@@ -38,14 +38,15 @@ describe ("Local Storage Test Suite", function() {
     expect(returned).toEqual(obj);
  });
 
- it("can set and remove keys from Objects", function() {
+ it("can set and remove Objects", function() {
     var obj = {"foo": "bar", "bar": "bazz"};
     ls.setItem("key", obj);
     var returned = ls.getItem("key");
     expect(ls.getItem("key")).toEqual(obj);
     expect(returned["foo"]).toBe("bar");
-    ls.removeItem("foo");
-    expect(ls.getItem("foo")).not.toBeDefined();
+    expect(returned["bar"]).toBe("bazz");
+    ls.removeItem("key");
+    expect(ls.getItem("key")).not.toBeDefined();
  });
  
 });
