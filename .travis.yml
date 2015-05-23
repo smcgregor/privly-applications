@@ -39,7 +39,7 @@ script:
 - "./node_modules/.bin/lcov-result-merger 'coverage/*.lcov' 'coverage/combined.lcov'"
 - "cd .."
 # Send the file to CodeClimate
-- "if [ \"$COVERALLS_REPO_TOKEN\" ]; then cat ./coverage/combined.lcov | ./node_modules/coveralls/bin/coveralls.js; fi"
+- "cat ./coverage/combined.lcov | ./node_modules/coveralls/bin/coveralls.js"
 before_script:
 - "cd test/ && npm install -g karma-cli && npm install && cd .."
 addons:
