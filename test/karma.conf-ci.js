@@ -1,4 +1,5 @@
 var fs = require('fs');
+var uuid = require('uuid');
 
 module.exports = function(config) {
 
@@ -124,14 +125,26 @@ module.exports = function(config) {
     // files to exclude from testing
     exclude: filesToExcludeFromTest,
 
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
+    // test result reporters to use
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['dots', 'coverage', 'saucelabs'],
+    reporters: ['dots', 'coverage', 'saucelabs', 'coverage', 'coveralls'],
 
     coverageReporter: {
       type : 'lcovonly',
       dir : 'test/coverage/'
+    },
+
+    // List the files you want coverage information for here
+    preprocessors: {
+      'shared/javascripts/*.js': 'coverage'
+    },
+
+    // Where to save the coverage information to
+    coverageReporter: {
+      type : 'lcovonly',
+      dir : 'test/coverage/',
+      subdir: '.',
+      file : uuid.v1() + ".lcov"
     },
 
     // web server port
