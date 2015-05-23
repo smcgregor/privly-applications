@@ -38,8 +38,8 @@ script:
 - "if [ ${TRAVIS_PULL_REQUEST} = 'false' ]; then ./run_each.sh karma.conf-ci.js; fi"
 - "./node_modules/.bin/lcov-result-merger 'coverage/*.lcov' 'coverage/combined.lcov'"
 # Send the file to CodeClimate
-- "cat ./coverage/combined.lcov | ./node_modules/coveralls/bin/coveralls.js"
 - "cd .."
+- "cat ./test/coverage/combined.lcov | ./test/node_modules/coveralls/bin/coveralls.js"
 before_script:
 - "cd test/ && npm install -g karma-cli && npm install && cd .."
 addons:
