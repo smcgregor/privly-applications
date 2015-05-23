@@ -37,9 +37,9 @@ script:
 - export BROWSERS_TO_TEST=Chrome,Firefox,Safari # test all the browsers
 - "if [ ${TRAVIS_PULL_REQUEST} = 'false' ]; then ./run_each.sh karma.conf-ci.js; fi"
 - "./node_modules/.bin/lcov-result-merger 'coverage/*.lcov' 'coverage/combined.lcov'"
-- "cd .."
 # Send the file to CodeClimate
 - "cat ./coverage/combined.lcov | ./node_modules/coveralls/bin/coveralls.js"
+- "cd .."
 before_script:
 - "cd test/ && npm install -g karma-cli && npm install && cd .."
 addons:
