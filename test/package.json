@@ -10,6 +10,7 @@
   "author": "Sauce Labs",
   "license": "Apache V2",
   "devDependencies": {
+    "coveralls": "^2.11.2",
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.1.7",
     "karma-coverage": "~0.2",
