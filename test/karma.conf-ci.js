@@ -134,11 +134,6 @@ module.exports = function(config) {
       dir : 'test/coverage/'
     },
 
-    // List the files you want coverage information for here
-    preprocessors: {
-      'shared/javascripts/*.js': 'coverage'
-    },
-
     // Where to save the coverage information to
     coverageReporter: {
       type : 'lcovonly',
