@@ -116,7 +116,16 @@ module.exports = function(config) {
 
     // Provide coverage information for the shared libraries
     preprocessors: {
-      'shared/javascripts/*.js': 'coverage'
+      'shared/javascripts/*.js': 'coverage',
+      'Help/js/*.js': 'coverage',
+      'History/js/*.js': 'coverage',
+      'Help/js/*.js': 'coverage',
+      'Login/js/*.js': 'coverage',
+      'Message/js/*.js': 'coverage',
+      'Message/js/*.js': 'coverage',
+      'Pages/js/*.js': 'coverage',
+      'PlainPost/js/*.js': 'coverage',
+      'shared/javascripts/privly-web/*.js': 'coverage'
     },
 
     // list of files / patterns to load in the browser
