@@ -116,8 +116,7 @@ module.exports = function(config) {
 
     // Provide coverage information for the shared libraries
     preprocessors: {
-      'shared/javascripts/*.js': 'coverage',
-      'Help/js/*.js': 'coverage'
+      '*/j*/*.js': 'coverage'
     },
 
     // list of files / patterns to load in the browser
