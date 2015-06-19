@@ -11,7 +11,8 @@ describe ("Message New Suite", function() {
       "logout_link",
       "home_domain",
       "content",
-      "save"
+      "save",
+      "preview"
     ];
     domIDs.forEach(function(id){
       var newElement = $('<a/>', {
@@ -47,7 +48,7 @@ describe ("Message New Suite", function() {
 
   it("previews markdown", function() {
     var mkdwn = "# hello world";
-    var preview = document.getElementById("content");
+    var preview = document.getElementById("preview");
     document.getElementById("content").value = mkdwn;
     previewMarkdown();
     expect(preview.innerHTML).toBe("<h1>hello world</h1>");
@@ -57,7 +58,7 @@ describe ("Message New Suite", function() {
 
     ls.removeItem("Message:URLs");
     var mkdwn = "# hello world";
-    var preview = document.getElementById("content");
+    var preview = document.getElementById("preview");
     document.getElementById("content").value = mkdwn;
     var response = {
       jqXHR: {status: 200}
