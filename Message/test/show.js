@@ -135,8 +135,7 @@ describe ("Message Show Suite", function() {
 
     processResponseContent(response);
     expect($("#edit_text").val()).toBe(mkdwn);
-    expect($("div#cleartext").html()).toBe(
-      '<p><a target="_blank" href="http://test.privly.org">link</a></p>');
+    expect($("div#cleartext > p > a")[0].getAttribute("target")).toBe("_blank");
     expect($("a[target='_blank']").length).toBe(1);
   });
 

@@ -74,8 +74,7 @@ describe ("PlainPost Show Suite", function() {
     var response = {json: {content: mkdwn}};
     processResponseContent(response);
     expect($("#edit_text").val()).toBe(mkdwn);
-    expect($("#post_content").html()).toBe(
-      '<p><a target="_blank" href="http://test.privly.org">link</a></p>');
+    expect($("#post_content a")[0].getAttribute("target")).toBe("_blank");
     expect($("a[target='_blank']").length).toBe(1);
   });
 
