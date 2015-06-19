@@ -48,4 +48,12 @@ describe ("Help New Suite", function() {
     privlyNetworkService.initializeNavigation = oldInitNav;
   });
 
+  it("shows login failures", function() {
+    spyOn(privlyNetworkService, "showLoggedOutNav");
+    callbacks.loginFailure();
+    expect($("#messages").is(':visible')).toBe(false);
+    expect($("#login_message").is(':visible')).toBe(true);
+    expect(privlyNetworkService.showLoggedOutNav).toHaveBeenCalled();
+  });
+
 });
