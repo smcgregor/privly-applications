@@ -101,10 +101,10 @@ try {
   ls.localStorageDefined = false;
   // Use Preferences service instead of localStorage
   if (typeof module !== 'undefined' && module.exports) {
-    const { Cc, Ci } = require("chrome");
+    const chrome = require("chrome");
     // Preferences storage
-    ls.preferences = Cc["@mozilla.org/preferences-service;1"].
-                       getService(Ci.nsIPrefService).
+    ls.preferences = chrome.Cc["@mozilla.org/preferences-service;1"].
+                       getService(chrome.Ci.nsIPrefService).
                        getBranch("extensions.privly.");
     // Loaded as a CommonJS module, reused as a Local Storage shim 
     // in lib/local_storage.js.
