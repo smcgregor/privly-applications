@@ -77,6 +77,7 @@ module.exports = function(config) {
   var sl_firefox = {
     base: 'SauceLabs',
     browserName: 'firefox',
+    platform: 'Windows 7',
     version: 'beta'
   }
   var sl_safari = {
