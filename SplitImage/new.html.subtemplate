@@ -18,9 +18,11 @@
 
 {% block form %}
   <div id="drop_zone">Drop image here to preview</div>
-  <!-- This is the old input style, but it would work if displayed  -->
-  <input style="display:none;" type="file" id="files" class="drop_button"
-    name="files[]" multiple />
+
+  <label class="btn btn-primary btn-lg btn-block">
+    <input style="display:none;" type="file" id="files" class="drop_button" name="files[]" multiple />
+    <span>Or Click to Select the File</span>
+  </label>
 
   <noscript>
     <h1>Your browser has scripting turned off. 

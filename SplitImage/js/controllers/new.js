@@ -13,17 +13,19 @@
 /*global Privly, markdown */
 document.addEventListener('DOMContentLoaded', function () {
 
-  document.getElementById('files').addEventListener('change', 
-    handleFileSelect, false);
-  
-  // Handle drag and drop
-  var dropZone = document.getElementById('drop_zone');
-  dropZone.addEventListener('dragover', handleDragOver, false);
-  dropZone.addEventListener('drop', function(evt){
+  function fileSelectEvent(evt){
     handleFileSelect(evt);
     $("#preview_area").show();
     $("#drop_zone").hide();
-  }, false);
+  }
+
+  document.getElementById('files')
+    .addEventListener('change', fileSelectEvent, false);
+
+  // Handle drag and drop, and file uplaod dialog
+  var dropZone = document.getElementById('drop_zone');
+  dropZone.addEventListener('dragover', handleDragOver, false);
+  dropZone.addEventListener('drop', fileSelectEvent, false);
 
   var app = new Privly.app.model.SplitImage();
   app.generateRandomKey();

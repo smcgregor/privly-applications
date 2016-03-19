@@ -42,7 +42,7 @@ function handleFileSelect(evt, callback) {
     if (!f.type.match('image.*')) {
       continue;
     }
-    
+
     // Only process smaller files. This application can handle larger files,
     // but it will be slow to encrypt/decrypt.
     if (f.size > 2000000) {
@@ -50,7 +50,7 @@ function handleFileSelect(evt, callback) {
         "Files should be smaller than 1 MB").show();
       continue;
     }
-    
+
     var reader = new FileReader();
 
     // Closure to capture the file information. Creates an image DOM
