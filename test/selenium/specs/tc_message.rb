@@ -37,6 +37,7 @@ class TestMessage < Test::Unit::TestCase
 
     page.driver.browser.get(@privly_app_url)
     page.execute_script("window.location.reload();")
+    page.execute_script("window.open('"+ @privly_app_url +"');") # Needs app to communicate with
 
     fill_in 'data', :with => 'magic_2'
     find(:css, '[name="to_privly_app"]').click
