@@ -44,6 +44,11 @@ class TestMessage < Test::Unit::TestCase
     assert page.find(:css, '#response').has_text?('pong/PRIVLY_APPLICATION/magic_2/' + @privly_app_url)
     assert page.find(:css, '#response').has_text?('pongAsync/PRIVLY_APPLICATION/magic_2/' + @privly_app_url)
     find(:css, '[name="clear"]').click
+
+    # Close the window we were communicating with
+    within_window(windows.last) do
+      page.execute_script("window.close();")
+    end
   end
 
 end
